@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inteligentne Urządzenia</title>
+  <link rel="stylesheet" href="main.css">
+  <link rel="stylesheet" href="devices.css">
+</head>
+<body>
+
+  <div class="thermostat">
+    <h2>Inteligentny Termostat 🌡️</h2>
+    <div id="temp-display">21°C</div>
+    <div class="controls">
+      <button id="temp-down">-</button>
+      <button id="temp-up">+</button>
+    </div>
+    <div class="eco-box">
+      <label>
+        <input type="checkbox" id="eco-mode"> Tryb EKO (Maks. 22°C)
+      </label>
+    </div>
+  </div>
+
+  <div class="smart-light">
+    <h2>Inteligentne Oświetlenie 💡</h2>
+    <div id="light-bulb"></div>
+    <div class="range-box">
+      <input type="range" id="brightness-slider" min="0" max="100" value="50">
+      <div id="brightness-value">Jasność: 50%</div>
+    </div>
+  </div>
+
+  <div class="smart-kettle">
+    <h2>Inteligentny Czajnik 🫖</h2>
+    <div id="kettle-status">Status: Wyłączony</div>
+    <div class="timer-box">
+      <button id="timer-btn">Gatuj wodę (5 sek)</button>
+    </div>
+  </div>
+
+  <script src="devices.js"></script>
+</body>
+</html>

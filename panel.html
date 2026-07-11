@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Centralny Panel Sterowania</title>
+  <link rel="stylesheet" href="main.css">
+  <link rel="stylesheet" href="panel.css">
+</head>
+<body>
+
+  <div class="master-panel">
+    <h2>Centralny Panel 🎛️</h2>
+    <p>Zarządzanie całym domem z jednego miejsca</p>
+    
+    <button id="master-off-btn">🔴 WYŁĄCZ WSZYSTKO</button>
+    
+    <div class="system-status">
+      <h3>Status systemów:</h3>
+      <div id="status-temp">Termostat: nieznany</div> 
+      <div id="status-light">Oświetlenie: nieznane</div>
+      <div id="status-kettle">Czajnik: nieznany</div>
+    </div>
+  </div>
+
+  <script src="panel.js"></script>
+</body>
+</html>

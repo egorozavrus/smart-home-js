@@ -1,0 +1,109 @@
+body {
+  background: #f0f3f6;
+  padding: 40px 20px;
+  display: grid;
+  /* Делаем сетку: карточки будут идти в ряд, минимум 250px шириной */
+  grid-template-columns: repeat(auto-fit, minmax(250px, max-content));
+  gap: 30px;
+  justify-content: center; /* Центрируем всю сетку на экране */
+}
+
+/* Общие стили для всех типов карточек приборов */
+.thermostat, .smart-light, .smart-kettle {
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+  text-align: center;
+  width: 250px;
+  box-sizing: border-box; /* Чтобы padding не раздувал ширину */
+}
+
+/* Термостат */
+#temp-display {
+  font-size: 48px;
+  font-weight: bold;
+  margin: 20px 0;
+  color: #34495e;
+  transition: color 0.3s ease;
+}
+
+.controls button {
+  width: 50px;
+  height: 50px;
+  font-size: 24px;
+  font-weight: bold;
+  border: none;
+  border-radius: 50%;
+  margin: 0 5px;
+  cursor: pointer;
+  background: #e0e0e0;
+  color: #333;
+  transition: background 0.2s;
+}
+
+.controls button:active {
+  background: #d0d0d0;
+}
+
+.eco-box {
+  margin-top: 25px;
+  font-size: 14px;
+  color: #7f8c8d;
+}
+
+/* Светильник */
+#light-bulb {
+  width: 80px;
+  height: 80px;
+  background-color: #f1c40f;
+  border-radius: 50%;
+  margin: 20px auto;
+  box-shadow: 0 0 50px rgba(241, 196, 15, 0.5);
+  transition: opacity 0.1s ease, box-shadow 0.1s ease;
+  opacity: 0.5; 
+}
+
+.range-box {
+  margin-top: 20px;
+}
+
+#brightness-slider {
+  width: 100%;
+  cursor: pointer;
+}
+
+#brightness-value {
+  margin-top: 10px;
+  font-size: 16px;
+  color: #7f8c8d;
+}
+
+/* Чайник */
+#kettle-status {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 15px 0;
+  color: #7f8c8d;
+}
+
+#timer-btn {
+  background: #3498db;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 14px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.2s;
+  width: 100%;
+}
+
+#timer-btn:hover {
+  background: #2980b9;
+}
+
+#timer-btn:disabled {
+  background: #bdc3c7;
+  cursor: not-allowed;
+}
