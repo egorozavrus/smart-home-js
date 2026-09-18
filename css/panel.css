@@ -1,26 +1,44 @@
 body {
-  background: #2c3e50; /* Темный стильный фон для пульта */
+  background: #2c3e50;
+  margin: 0;
+  padding: 20px;
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
+  box-sizing: border-box;
 }
 
+/* Контейнер для двух колонок */
+.split-container {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+  max-width: 1100px;
+  width: 100%;
+  align-items: stretch;
+  justify-content: center;
+}
+
+/* Левая колонка — Пульт */
 .master-panel {
   background: #ffffff;
-  padding: 40px;
+  padding: 30px;
   border-radius: 25px;
   box-shadow: 0 15px 35px rgba(0,0,0,0.2);
   text-align: center;
-  width: 300px;
+  width: 320px;
+  flex-shrink: 0;
+  box-sizing: border-box;
 }
 
 .open-devices-link {
   display: inline-block;
   margin-bottom: 20px;
-  color: var(--primary, #0d6efd);
+  color: #0d6efd;
   text-decoration: none;
   font-weight: 500;
+  font-size: 14px;
   border-bottom: 1px dashed #0d6efd;
 }
 .open-devices-link:hover {
@@ -32,14 +50,14 @@ body {
   background: #e74c3c;
   color: white;
   border: none;
-  padding: 15px 30px;
+  padding: 15px 20px;
   font-size: 16px;
   font-weight: bold;
   border-radius: 10px;
   cursor: pointer;
   width: 100%;
   transition: background 0.2s;
-  margin-top: 20px;
+  margin-top: 10px;
 }
 
 #master-off-btn:hover {
@@ -47,14 +65,52 @@ body {
 }
 
 .system-status {
-  margin-top: 30px;
+  margin-top: 25px;
   text-align: left;
   border-top: 1px solid #ecf0f1;
-  padding-top: 20px;
+  padding-top: 15px;
   color: #34495e;
 }
 
 .system-status h3 {
   margin-top: 0;
-  font-size: 16px;
+  font-size: 15px;
+}
+
+.system-status div {
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+/* Правая колонка — Фрейм с приборами */
+.devices-preview {
+  flex-grow: 1;
+  background: #ffffff;
+  border-radius: 25px;
+  overflow: hidden;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+  min-height: 500px;
+}
+
+.devices-preview iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* Адаптив для мобилок: если экран узкий, ставим блоки друг под друга */
+@media (max-width: 850px) {
+  .split-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .master-panel, .devices-preview {
+    width: 100%;
+    max-width: 400px;
+  }
+  
+  .devices-preview {
+    height: 550px;
+  }
 }
