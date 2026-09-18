@@ -108,7 +108,7 @@ body {
   }
 
   .split-container {
-    flex-direction: column; /* Пульт сверху, фрейм снизу */
+    flex-direction: column;
     gap: 20px;
   }
 
@@ -120,6 +120,7 @@ body {
   .devices-preview {
     width: 100%;
     max-width: 400px;
-    height: 720px; /* Увеличиваем высоту фрейма, чтобы 3 карточки влезли вертикально без скролла */
+    /* Увеличиваем высоту фрейма, чтобы все 3 карточки влезали полностью */
+    height: 820px;
   }
 }
