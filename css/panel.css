@@ -1,7 +1,7 @@
 body {
   background: #2c3e50;
   margin: 0;
-  padding: 20px;
+  padding: 20px 10px;
   min-height: 100vh;
   display: flex;
   justify-content: center;
@@ -14,7 +14,7 @@ body {
   display: flex;
   flex-direction: row;
   gap: 25px;
-  max-width: 1180px; /* Увеличили со 1100px */
+  max-width: 1180px;
   width: 100%;
   align-items: center;
   justify-content: center;
@@ -23,8 +23,8 @@ body {
 /* Левая колонка — Пульт */
 .master-panel {
   background: #ffffff;
-  padding: 30px;
-  border-radius: 25px;
+  padding: 25px;
+  border-radius: 20px;
   box-shadow: 0 15px 35px rgba(0,0,0,0.2);
   text-align: center;
   width: 320px;
@@ -34,13 +34,14 @@ body {
 
 .open-devices-link {
   display: inline-block;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
   color: #0d6efd;
   text-decoration: none;
   font-weight: 500;
   font-size: 14px;
   border-bottom: 1px dashed #0d6efd;
 }
+
 .open-devices-link:hover {
   color: #0a58ca;
   border-bottom-style: solid;
@@ -50,8 +51,8 @@ body {
   background: #e74c3c;
   color: white;
   border: none;
-  padding: 15px 20px;
-  font-size: 16px;
+  padding: 14px 20px;
+  font-size: 15px;
   font-weight: bold;
   border-radius: 10px;
   cursor: pointer;
@@ -65,7 +66,7 @@ body {
 }
 
 .system-status {
-  margin-top: 25px;
+  margin-top: 20px;
   text-align: left;
   border-top: 1px solid #ecf0f1;
   padding-top: 15px;
@@ -82,14 +83,15 @@ body {
   font-size: 14px;
 }
 
-/* Правая колонка — Фрейм с приборами */
+/* Правая колонка — Фрейм */
 .devices-preview {
   flex-grow: 1;
   background: #ffffff;
-  border-radius: 25px;
+  border-radius: 20px;
   overflow: hidden;
   box-shadow: 0 15px 35px rgba(0,0,0,0.2);
-  height: 480px; /* Зафиксировали идеальную высоту */
+  height: 480px;
+  width: 100%;
 }
 
 .devices-preview iframe {
@@ -98,19 +100,26 @@ body {
   border: none;
 }
 
-/* Адаптив для мобилок: если экран узкий, ставим блоки друг под друга */
+/* 🔥 АДАПТИВ ДЛЯ МОБИЛЬНЫХ УСТРОЙСТВ 🔥 */
 @media (max-width: 850px) {
-  .split-container {
-    flex-direction: column;
-    align-items: center;
+  body {
+    padding: 15px 10px;
+    align-items: flex-start;
   }
-  
-  .master-panel, .devices-preview {
+
+  .split-container {
+    flex-direction: column; /* Пульт сверху, фрейм снизу */
+    gap: 20px;
+  }
+
+  .master-panel {
     width: 100%;
     max-width: 400px;
   }
-  
+
   .devices-preview {
-    height: 550px;
+    width: 100%;
+    max-width: 400px;
+    height: 720px; /* Увеличиваем высоту фрейма, чтобы 3 карточки влезли вертикально без скролла */
   }
 }

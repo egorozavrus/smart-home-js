@@ -1,9 +1,9 @@
 body {
   background: #f0f3f6;
-  padding: 20px 15px;
+  padding: 15px;
   margin: 0;
   display: flex;
-  flex-direction: row; /* Все карточки строго в один ряд */
+  flex-direction: row;
   justify-content: center;
   align-items: center;
   gap: 15px;
@@ -11,14 +11,14 @@ body {
   box-sizing: border-box;
 }
 
-/* Общие стили для всех типов карточек приборов */
+/* Общие стили для карточек */
 .thermostat, .smart-light, .smart-kettle {
   background: #ffffff;
   padding: 20px 15px;
   border-radius: 16px;
   box-shadow: 0 8px 20px rgba(0,0,0,0.05);
   text-align: center;
-  width: 220px; /* Слегка уменьшили ширину для идеального вхождения */
+  width: 220px;
   box-sizing: border-box;
   flex-shrink: 0;
 }
@@ -49,11 +49,6 @@ h2 {
   cursor: pointer;
   background: #e0e0e0;
   color: #333;
-  transition: background 0.2s;
-}
-
-.controls button:active {
-  background: #d0d0d0;
 }
 
 .eco-box {
@@ -105,12 +100,7 @@ h2 {
   font-size: 13px;
   border-radius: 6px;
   cursor: pointer;
-  transition: background 0.2s;
   width: 100%;
-}
-
-#timer-btn:hover {
-  background: #2980b9;
 }
 
 #timer-btn:disabled {
@@ -118,14 +108,34 @@ h2 {
   cursor: not-allowed;
 }
 
-/* На случай если окно совсем узкое */
-@media (max-width: 720px) {
+/* 🔥 АДАПТИВ КАРТОЧЕК ДЛЯ ТЕЛЕФОНА 🔥 */
+@media (max-width: 850px) {
   body {
-    flex-direction: column;
-    padding: 15px;
+    flex-direction: column; /* Карточки выстраиваются столбиком */
+    justify-content: flex-start;
+    padding: 10px;
+    gap: 12px;
+    min-height: auto;
   }
+
   .thermostat, .smart-light, .smart-kettle {
     width: 100%;
-    max-width: 280px;
+    padding: 15px;
+  }
+
+  h2 {
+    font-size: 1rem;
+    margin-bottom: 10px;
+  }
+
+  #temp-display {
+    font-size: 32px;
+    margin: 5px 0;
+  }
+
+  #light-bulb {
+    width: 50px;
+    height: 50px;
+    margin: 5px auto;
   }
 }
