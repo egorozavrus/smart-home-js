@@ -103,24 +103,22 @@ body {
 /* 🔥 АДАПТИВ ДЛЯ МОБИЛЬНЫХ УСТРОЙСТВ 🔥 */
 @media (max-width: 850px) {
   body {
-    padding: 15px 10px;
-    align-items: flex-start;
+    padding: 20px 15px;
+    align-items: center;
   }
 
   .split-container {
     flex-direction: column;
-    gap: 20px;
+    align-items: center;
   }
 
   .master-panel {
     width: 100%;
-    max-width: 400px;
+    max-width: 360px;
   }
 
+  /* На мобилке убираем iframe, чтобы не было душного двойного скролла */
   .devices-preview {
-    width: 100%;
-    max-width: 400px;
-    /* Увеличиваем высоту фрейма, чтобы все 3 карточки влезали полностью */
-    height: 820px;
+    display: none;
   }
 }
